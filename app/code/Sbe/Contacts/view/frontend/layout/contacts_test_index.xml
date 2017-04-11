@@ -4,8 +4,7 @@
       xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceContainer name="content">
-            <block class="Magento\Framework\View\Element\Template" name="contactForm"
-                   template="Sbe_Contacts::test_index.phtml"></block>
+            <block class="Sbe\Contacts\Block\Contactslist" name="contactForm" template="Sbe_Contacts::test_index.phtml"></block>
         </referenceContainer>
     </body>
 </page>
