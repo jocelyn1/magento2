@@ -19,7 +19,7 @@ $token =  json_decode($token);
 $headers = array("Authorization: Bearer $token","Content-Type: application/json");
 
 $skus = array(
-    '24-WG085' => 5
+    '24-WG085' => 10
 );
 
 
@@ -27,7 +27,8 @@ foreach ($skus as $sku => $stock) {
     $requestUrl='http://www.magento2.lan/rest/V1/products/' . $sku . '/stockItems/1';
 
     $sampleProductData = array(
-        "qty" => $stock
+        "qty" => $stock,
+        "is_in_stock" => 0
     );
     $productData = json_encode(array('stockItem' => $sampleProductData));
 
