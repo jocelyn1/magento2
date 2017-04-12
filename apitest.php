@@ -19,18 +19,19 @@ $token =  json_decode($token);
 $headers = array("Authorization: Bearer $token","Content-Type: application/json");
 
 $skus = array(
-    '24-WG085' => 10
+    '24-WG085',
+    '24-WG086'
 );
 
 
-foreach ($skus as $sku => $stock) {
-    $requestUrl='http://www.magento2.lan/rest/V1/products/' . $sku . '/stockItems/1';
+foreach ($skus as $sku) {
+    $requestUrl='http://www.magento2.lan/rest/V1/products/' . $sku;
 
     $sampleProductData = array(
-        "qty" => $stock,
-        "is_in_stock" => 0
+        "name" => "co" . $sku,
+        "price" => 150
     );
-    $productData = json_encode(array('stockItem' => $sampleProductData));
+    $productData = json_encode(array('product' => $sampleProductData));
 
     $ch = curl_init();
     curl_setopt($ch,CURLOPT_URL, $requestUrl);
