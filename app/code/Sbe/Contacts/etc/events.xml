@@ -5,7 +5,7 @@
         <observer name="sbe_contacts_observer_test" instance="Sbe\Contacts\Observer\TestObserver" />
     </event>
     <!--event natif-->
-    <event name="checkout_cart_add_product_complete">
+    <!--<event name="checkout_cart_add_product_complete">
         <observer name="sbe_contacts_observer_test" instance="Sbe\Contacts\Observer\TestObserver" />
-    </event>
+    </event>-->
 </config>
