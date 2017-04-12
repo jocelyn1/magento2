@@ -1,7 +1,0 @@
-<?xml version="1.0"?>
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
-    <menu>
-        <add id="Sbe_Contacts" title="SBE" module="Sbe_Contacts" sortOrder="20" dependsOnModule="Sbe_Contacts" resource="Sbe_Contacts::contacts"/>
-        <add id="Sbe_Contacts::index" title="Contacts" module="Sbe_Contacts" action="contacts/test/index" parent="Sbe_Contacts" sortOrder="20" dependsOnModule="Sbe_Contacts" resource="Sbe_Contacts::contacts"/>
-    </menu>
-</config>
