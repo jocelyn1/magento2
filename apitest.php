@@ -19,24 +19,38 @@ $token =  json_decode($token);
 $headers = array("Authorization: Bearer $token","Content-Type: application/json");
 
 $skus = array(
-    '24-WG085',
-    '24-WG086'
+    'product1',
+    'product2'
 );
 
-
 foreach ($skus as $sku) {
-    $requestUrl='http://www.magento2.lan/rest/V1/products/' . $sku;
+    $requestUrl='http://www.magento2.lan/rest/V1/products/';
+
+
+   $stock_item = array(
+       "qty" => 20,
+       "is_in_stock" => 1
+   );
+
 
     $sampleProductData = array(
+        "attribute_set_id" => 4,
+        "sku" => $sku,
         "name" => "co" . $sku,
-        "price" => 150
+        "price" => 20,
+        "status" => 1,
+        "visibility" => 1,
+        "weight" => 150,
+        "type_id" => "simple",
+        "extension_attributes" => array("stock_item" => $stock_item)
     );
+
     $productData = json_encode(array('product' => $sampleProductData));
 
     $ch = curl_init();
     curl_setopt($ch,CURLOPT_URL, $requestUrl);
     curl_setopt($ch,CURLOPT_POSTFIELDS, $productData);
-    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
+    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
     curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
