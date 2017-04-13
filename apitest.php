@@ -18,12 +18,7 @@ $token =  json_decode($token);
 //Use above token into header
 $headers = array("Authorization: Bearer $token","Content-Type: application/json");
 
-$skus = array(
-    'product1',
-    'product2'
-);
-
-foreach ($skus as $sku) {
+for ($i = 0; $i < 5000; $i++) {
     $requestUrl='http://www.magento2.lan/rest/V1/products/';
 
 
@@ -35,8 +30,8 @@ foreach ($skus as $sku) {
 
     $sampleProductData = array(
         "attribute_set_id" => 4,
-        "sku" => $sku,
-        "name" => "co" . $sku,
+        "sku" => '000'. $i,
+        "name" => "co" . $i,
         "price" => 20,
         "status" => 1,
         "visibility" => 1,
