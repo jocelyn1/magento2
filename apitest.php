@@ -50,7 +50,7 @@ $headers = array("Authorization: Bearer $token","Content-Type: application/json"
     $image = 'pub/media/import/tee-shirt-rouge.jpg';
 
     $productData = array(
-        'sku'               => uniqid(),
+        'sku'               => 'skusku',
         'name'              => 'Simple Product ' . uniqid(),
         'visibility'        => 4,
         'type_id'           => 'simple',
@@ -65,9 +65,9 @@ $headers = array("Authorization: Bearer $token","Content-Type: application/json"
             )
         ),
         'custom_attributes' => array(
-            array('attribute_code' => 'category_ids', 'value' => ["5"] ),
+            array('attribute_code' => 'category_ids', 'value' => ['5'] ),
             array('attribute_code' => 'description', 'value' => 'Simple Description' ),
-            array('attribute_code' => 'short_description', 'value' => 'Simple  Short Description' ),
+            array('attribute_code' => 'short_description', 'value' => 'Simple  Short Description' )
         ),
         'media_gallery_entries' => array(
             array(
@@ -81,6 +81,13 @@ $headers = array("Authorization: Bearer $token","Content-Type: application/json"
                     'name' => pathinfo($image,PATHINFO_FILENAME).'.'.pathinfo($image, PATHINFO_EXTENSION),
                     'base64_encoded_data' => base64_encode(file_get_contents($image)),
                 )
+            )
+        ),
+        'product_links' => array(
+            array(
+                'sku' => 'skusku',
+                'link_type' => 'related',
+                'linked_product_sku' => '0004999'
             )
         )
     );
