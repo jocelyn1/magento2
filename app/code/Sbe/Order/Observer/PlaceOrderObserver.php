@@ -33,6 +33,6 @@ class PlaceOrderObserver implements ObserverInterface
 
 
         // if a faire si le client est un pro ou non
-
+                // go dans l'api artemis creer en jee
     }
 }
