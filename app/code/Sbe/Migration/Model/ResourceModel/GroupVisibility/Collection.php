@@ -21,24 +21,5 @@ class Collection extends AbstractCollection
         $this->_init(\Sbe\Migration\Model\GroupVisibility::class, \Sbe\Migration\Model\ResourceModel\GroupVisibility::class);
     }
 
-    /**
-     * Retrieve option array
-     *
-     * @return array
-     */
-    public function toOptionArray()
-    {
-        return parent::_toOptionArray('group_visibility_id', 'name');
-    }
-
-    /**
-     * Retrieve option hash
-     *
-     * @return array
-     */
-    public function toOptionHash()
-    {
-        return parent::_toOptionHash('group_visibility_id', 'name');
-    }
 
 }
