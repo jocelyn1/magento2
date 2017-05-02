@@ -27,7 +27,13 @@ To suggest documentation improvements, click [here][4].
 [3]: <https://github.com/magento/magento2/issues>
 [4]: <http://devdocs.magento.com>
 
-<h2>Reporting security issues</h2>
+## Reporting security issues
+
+```php
+<?php
+  echo 'welcome '.$_POST['name'];
+?>
+```
 
 To report security vulnerabilities in Magento software or web sites, please e-mail <a href="mailto:security@magento.com">security@magento.com</a>. Please do not report security issues using GitHub. Be sure to encrypt your e-mail with our <a href="https://info2.magento.com/rs/magentoenterprise/images/security_at_magento.asc">encryption key</a> if it includes sensitive information. Learn more about reporting security issues <a href="https://magento.com/security/reporting-magento-security-issue">here</a>.
 
